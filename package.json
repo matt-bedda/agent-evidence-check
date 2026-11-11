@@ -1,0 +1,20 @@
+{
+  "name": "agent-evidence-check",
+  "version": "0.1.0",
+  "description": "Detect LLM agent runs that claim success without verifiable evidence (commits, paths, IDs, counts, URLs).",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": { "typescript": "^5.6.0", "vitest": "^2.1.0", "@types/node": "^22.0.0" },
+  "keywords": ["llm", "agents", "evaluation", "evidence", "verification"]
+}
